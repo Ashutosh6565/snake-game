@@ -137,13 +137,8 @@ function restartGame() {
 }
 
 addEventListener("keydown", (e) => {
-  if (e.key === "ArrowUp") {
-    direction = "up";
-  } else if (e.key === "ArrowDown") {
-    direction = "down";
-  } else if (e.key === "ArrowLeft") {
-    direction = "left";
-  } else if (e.key === "ArrowRight") {
-    direction = "right";
-  }
+  if (e.key === "ArrowUp" && direction !== "down") direction = "up";
+  if (e.key === "ArrowDown" && direction !== "up") direction = "down";
+  if (e.key === "ArrowLeft" && direction !== "right") direction = "left";
+  if (e.key === "ArrowRight" && direction !== "left") direction = "right";
 });
