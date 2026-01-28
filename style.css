@@ -5,6 +5,8 @@
 }
 :root {
     --bg-primarey-color : #0c0c0c;
+    --bg-fill-color: #fdfdfc;
+    --bg-food-color: red;
     --text-color : #f0f0f0;
     --space-xs : 4px;
     --space-sm : 8px;
@@ -15,6 +17,11 @@
     --space-3xl : 48px;
     --border-primary-color : #333333;
     --border-radious-xs:4px;
+    --border-radious-sm:8px;
+    --border-radious-md:12px;
+    --border-radious-lg:16px;
+    --border-radious-xl:24px;
+    --border-radious-2xl:32px;
 }
 html, body {
     height: 100%;
@@ -30,15 +37,45 @@ html {
 
 main , section{
     width: 100%;
-
+    height: 100%;
 }
 
 section {
     padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-lg);
 }
 
 section #infos {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+#info {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radious-md);
+}
+#board {
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minMax(50px, 1fr));
+    grid-template-rows: repeat(auto-fill, minMax(50px, 1fr));
+}
+.block {
+    /* width : 30px;
+    height: 30px; */
+    border: 1px solid var(--border-primary-color);
+}
+.fill {
+    background-color: var(--bg-fill-color);
+}
+
+
+.food {
+    background-color: var(--bg-food-color);
 }
